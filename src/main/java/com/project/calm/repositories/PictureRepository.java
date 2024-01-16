@@ -8,5 +8,5 @@ import java.util.List;
 public interface PictureRepository extends JpaRepository<Picture, Integer> {
     boolean existsByNameContainingIgnoreCase(String name);
 
-    List<Picture> findPictureByName(String name);
+    List<Picture> findPictureByNameIgnoreCase(String name);
 }
