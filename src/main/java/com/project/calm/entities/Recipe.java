@@ -2,7 +2,7 @@ package com.project.calm.entities;
 
 
 import com.project.calm.dto.RecipeDTO;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
