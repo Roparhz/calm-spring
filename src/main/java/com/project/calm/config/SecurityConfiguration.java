@@ -37,6 +37,7 @@ public class SecurityConfiguration {
                                 authorize ->
                                         authorize
                                                 .antMatchers(POST, "/api/login").permitAll()
+                                                .antMatchers("/admin").authenticated()
                                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->
