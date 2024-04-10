@@ -9,21 +9,21 @@ import lombok.Setter;
 @Setter
 public class IngredientDTO {
     private String name;
-    private Integer pricePerunit;
+    private Integer pricePerUnit;
     private String unit;
 
     public IngredientDTO(){}
 
-    public IngredientDTO(String name, Integer pricePerunit, String unit){
+    public IngredientDTO(String name, Integer pricePerUnit, String unit){
         this.name = name;
-        this.pricePerunit = pricePerunit;
+        this.pricePerUnit = pricePerUnit;
         this.unit = unit;
     }
 
     public Ingredient toIngredient(){
         Ingredient ingredient = new Ingredient();
         ingredient.setName(this.getName());
-        ingredient.setPricePerUnit(this.getPricePerunit());
+        ingredient.setPricePerUnit(this.getPricePerUnit());
         ingredient.setUnit(this.getUnit());
         return ingredient;
     }

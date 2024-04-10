@@ -3,7 +3,7 @@ package com.project.calm.exceptions;
 public class EntityAlreadyCreatedException extends RuntimeException{
     private final String entityName;
     public EntityAlreadyCreatedException(String msg, String entityName){
-        super();
+        super(msg);
         this.entityName = entityName;
     }
 

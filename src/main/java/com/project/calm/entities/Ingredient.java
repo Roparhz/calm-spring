@@ -34,7 +34,7 @@ public class Ingredient {
 
     public void updateIngredient(IngredientDTO ingredientDTO){
         this.setName(ingredientDTO.getName());
-        this.setPricePerUnit(ingredientDTO.getPricePerunit());
+        this.setPricePerUnit(ingredientDTO.getPricePerUnit());
         this.setUnit(ingredientDTO.getUnit());
     }
 }

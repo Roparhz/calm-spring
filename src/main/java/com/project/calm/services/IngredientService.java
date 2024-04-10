@@ -2,6 +2,7 @@ package com.project.calm.services;
 
 import com.project.calm.dto.IngredientDTO;
 import com.project.calm.entities.Ingredient;
+import com.project.calm.exceptions.EntityAlreadyCreatedException;
 import com.project.calm.repositories.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,9 @@ public class IngredientService {
 
     public List<Ingredient> getAllIngredient(){ return ingredientRepository.findAll();}
     public List<Ingredient> getIngredientByName(String name){ return ingredientRepository.findByNameContainingIgnoreCase(name);}
-    public Ingredient save(Ingredient ingredient) throws InstanceAlreadyExistsException{
+    public Ingredient save(Ingredient ingredient) throws EntityAlreadyCreatedException {
         if(ingredientRepository.existsByNameContainingIgnoreCase(ingredient.getName())){
-            throw new InstanceAlreadyExistsException("L'ingrédient existe déjà !");
+            throw new EntityAlreadyCreatedException("L'ingrédient existe déjà !", "ingredient");
         }
         return ingredientRepository.save(ingredient);
     }
